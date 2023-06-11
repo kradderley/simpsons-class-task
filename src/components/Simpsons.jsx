@@ -9,8 +9,14 @@ class Simpsons extends Component {
     return (
       <>
         <ol>
-          {simpsons.map((item) => {
-            return <Character item ={item} key={item.quote} />;
+          {simpsons.map((item, index) => {
+            return (
+              <Character
+                item={item}
+                key={item.id}
+                onDelete={this.props.onDelete}
+              />
+            );
           })}
         </ol>
       </>

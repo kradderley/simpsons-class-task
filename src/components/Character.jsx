@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Name from "./Name";
 import Quote from "./Quote";
 import Image from "./Image";
+import Delete from "./Delete";
+
 
 class Character extends Component {
   state = { like: false };
@@ -12,7 +14,7 @@ class Character extends Component {
 
   render() {
 
-    const {character, quote, image} = this.props.item; 
+    const {character, quote, image, id} = this.props.item; 
     const { like } = this.state;
 
     return (
@@ -24,6 +26,7 @@ class Character extends Component {
         />
         <Quote quote={quote} />
         <Image image={image} like={like} />
+        <Delete onDelete = {this.props.onDelete} id = {id}/>
       </div>
     );
   }
